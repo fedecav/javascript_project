@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function doOp(){
+            let op1, op2;
+            op1 = parseInt(document.getElementById('n1').value)
+            console.log(op1)
+            op2 = parseInt(document.getElementById('n2').innerHTML)
+            let sum = op1 + op2
+            console.log(sum)
+            document.getElementById('sum').innerHTML = document.getElementById('sum').innerHTML + sum
+        }
+    </script>
+    <span>operatore 1: </span>
+    <input id="n1" type="text"></textarea>
+    <br/>
+    <span>operatore 2: </span>
+    <span id="n2">3</span>
+    <br/>
+    <br/>
+    <span id="sum">somma: </span>
+    <br/>
+    <span id="diff">differenza: </span>
+    <br/>
+    <span id="product">prodotto: </span>
+    <br/>
+    <span id="division">divisione: </span>
+    <br/>
+    <br/>
+    <button onclick=doOp()>esegui</button>
+   
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <span>numero:</span>
+    <input id="n1" type="text"></input>
+    <script>
+        function doOp(){
+        let op = parseInt(document.getElementById('n1').value)
+        let i = 1
+        document.getElementById('pot').innerHTML = ''
+        while (i<op+1) {
+            pot = i**2
+            console.log(pot)
+            i+=1
+            const potDiv = document.getElementById('pot')
+            const node = document.createElement('span')
+            node.innerHTML = pot
+            potDiv.appendChild(node)
+            potDiv.appendChild(document.createElement('br'))
+        }
+
+        }
+        
+    </script>
+    <button onclick=doOp()>esegui</button>
+    <br>
+    <p id="pot"> </p>
+</body>
+</html>
