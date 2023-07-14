@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
 <body>
+    <button onclick="restart()">restart</button>
+    <br>
+    <button onclick="button_stop()">stop</button> 
 <script>
     let color = ['yellow','red','green','purple']
-    
-    function changeBgColor() {
-        document.bgColor = color[0]
+    let i = 0
+    let n = color.length
+    let stop = false
+    console.log(i)
+    function changeBgColor() { 
+       if (stop == false){    
+       document.bgColor = color[(i % n + n)%n];
+       console.log(color[(i % n + n)%n]);
+       i += 1;
+       window.setTimeout(changeBgColor, 1 * 1000)}
     }
-
-    window.setTimeout(changeBgColor, 15 * 1000)
-    // i = 0;
-    // while (i<75467){
-    //     i = [i]
-        
-    //     i +=1 
-
-
-    // }
-
-    
+    function button_stop(){
+        stop = true
+    }
+    function restart(){
+        stop = false
+        window.setTimeout(changeBgColor, 1 * 1000)
+    }
+    window.setTimeout(changeBgColor, 1 * 1000)
 </script>
 </body>
 </html>
